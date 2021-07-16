@@ -4,5 +4,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: launch-linter
-        run: npx eslint ..
+      - name: Run linter
+        run: |
+          make lint
