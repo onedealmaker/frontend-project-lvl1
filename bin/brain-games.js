@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import launch from '../src/games/greetings.js';
+import launch from '../src/cli.js';
 
 launch();

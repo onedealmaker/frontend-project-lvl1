@@ -1,4 +1,4 @@
-import runEngine from '../cli.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
