@@ -5,3 +5,5 @@
 [![asciicast](https://asciinema.org/a/425959.svg)](https://asciinema.org/a/425959)
 ### "Find grand common divisor" game execution example:
 [![asciicast](https://asciinema.org/a/425961.svg)](https://asciinema.org/a/425961)
+### "Find number from the progression" game execution example:
+[![asciicast](https://asciinema.org/a/425965.svg)](https://asciinema.org/a/425965)
