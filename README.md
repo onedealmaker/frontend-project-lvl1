@@ -7,3 +7,8 @@
 [![asciicast](https://asciinema.org/a/425961.svg)](https://asciinema.org/a/425961)
 ### "Find number from the progression" game execution example:
 [![asciicast](https://asciinema.org/a/425965.svg)](https://asciinema.org/a/425965)
+### "Find number from the progression" game execution example:
+[![asciicast](https://asciinema.org/a/425965.svg)](https://asciinema.org/a/425965)
+### "Is given number prime" game execution example:
+[![asciicast](https://asciinema.org/a/425966.svg)](https://asciinema.org/a/425966)
+
