@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const answersToWin = 3; // count of game rounds
+const gameRoundsNumber = 3;
 
 export default (gameDescription, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
@@ -9,7 +9,7 @@ export default (gameDescription, getQuestionAndAnswer) => {
   console.log(`Hello, ${userName}!`);
 
   const gameIter = (attemptNum) => {
-    if (attemptNum === answersToWin) {
+    if (attemptNum === gameRoundsNumber) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
