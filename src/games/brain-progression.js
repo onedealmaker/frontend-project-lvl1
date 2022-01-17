@@ -2,26 +2,33 @@ import runEngine from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const description = 'What number is missing in the progression?';
-const progressionLength = 10;
 
-const getMemberValue = (firstMember, step, memberIndex) => firstMember + step * memberIndex;
-
-const getQuestion = (rightAnswerIndex, firstMember, step) => {
-  let question = '';
+const getProgression = (progressionLength, firstMember, step) => {
+  const progression = [];
   for (let memberIndex = 0; memberIndex < progressionLength; memberIndex += 1) {
-    if (rightAnswerIndex === memberIndex) question = `${question}.. `;
-    else question = `${question}${getMemberValue(firstMember, step, memberIndex)} `;
+    const lastMember = progression[progression.length - 1];
+    if(progression.length < 1) {
+      progression.push(firstMember);
+    } else {progression.push(lastMember + step)}
   }
-  return question.trim();
+  return progression;
+};
+
+const getQuestion = (progression, answerIndex) => {
+  const riddle = [...progression];
+  riddle[answerIndex] = '..';
+  return riddle.join(' ');
 };
 
 const generateQuestionAndAnswer = () => {
-  const step = getRandomNumber(5, 21);
+  const progressionLength = 10;
+  const step = getRandomNumber(5, 21)
   const firstMember = getRandomNumber(1, 10);
-  const rightAnswerIndex = getRandomNumber(0, progressionLength - 1);
-  const rightAnswer = String(getMemberValue(firstMember, step, rightAnswerIndex));
-  const question = getQuestion(rightAnswerIndex, firstMember, step);
-  return [question, rightAnswer];
+  const progression = getProgression(progressionLength, firstMember, step);
+  const answerIndex = getRandomNumber(0, progressionLength - 1);
+  const answer = progression[answerIndex].toString();
+  const question = getQuestion(progression, answerIndex);
+  return [question, answer];
 };
 
 export default () => runEngine(description, generateQuestionAndAnswer);
