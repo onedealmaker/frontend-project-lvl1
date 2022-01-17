@@ -3,19 +3,19 @@ import getRandomNumber from '../randomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (a, b) => {
-  if (b === 0) {
-    return a;
+const findGcd = (firstMember, secondMember) => {
+  if (secondMember === 0) {
+    return firstMember;
   }
 
-  return findGcd(b, a % b);
+  return findGcd(secondMember, firstMember % secondMember);
 };
 
 const generateQuestionAndAnswer = () => {
-  const a = getRandomNumber(1, 100);
-  const b = getRandomNumber(1, 100);
-  const question = `${a} ${b}`;
-  const rightAnswer = String(findGcd(a, b));
+  const firstMember = getRandomNumber(1, 50);
+  const secondMember = getRandomNumber(1, 50);
+  const question = `${firstMember} ${secondMember}`;
+  const rightAnswer = String(findGcd(firstMember, secondMember));
   return [question, rightAnswer];
 };
 

@@ -4,26 +4,26 @@ import getRandomNumber from '../randomNumber.js';
 const description = 'What is the result of the expression?';
 const operators = '-+*';
 
-const calculate = (a, operator, b) => {
+const calculate = (firstMember, operator, secondMember) => {
   switch (operator) {
     case '-':
-      return a - b;
+      return firstMember - secondMember;
     case '+':
-      return a + b;
+      return firstMember + secondMember;
     case '*':
-      return a * b;
+      return firstMember * secondMember;
     default:
       return null;
   }
 };
 
 const generateQuestionAndAnswer = () => {
-  const a = getRandomNumber(1, 100);
-  const b = getRandomNumber(1, 100);
+  const firstMember = getRandomNumber(1, 100);
+  const secondMember = getRandomNumber(1, 100);
   const operatorIndex = getRandomNumber(0, operators.length - 1);
   const operator = operators.charAt(operatorIndex);
-  const question = `${a} ${operator} ${b}`;
-  const rightAnswer = String(calculate(a, operator, b));
+  const question = `${firstMember} ${operator} ${secondMember}`;
+  const rightAnswer = String(calculate(firstMember, operator, secondMember));
   return [question, rightAnswer];
 };
 

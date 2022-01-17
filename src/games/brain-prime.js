@@ -2,7 +2,7 @@ import runEngine from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const checkIsNumPrime = (num) => {
+const isNumPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -16,7 +16,7 @@ const checkIsNumPrime = (num) => {
 
 const generateQuestionAndAnswer = () => {
   const question = getRandomNumber(1, 3000);
-  const rightAnswer = checkIsNumPrime(question) ? 'yes' : 'no';
+  const rightAnswer = isNumPrime(question) ? 'yes' : 'no';
   return [String(question), rightAnswer];
 };
 
