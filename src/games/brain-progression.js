@@ -3,11 +3,11 @@ import getRandomNumber from '../randomNumber.js';
 
 const description = 'What number is missing in the progression?';
 
-const getProgression = (progressionLength, firstMember, step) => {
+const getProgression = (reqireLength, firstMember, step) => {
   const progression = [firstMember];
   for (
     let newMemberIndex = progression.length;
-    newMemberIndex < progressionLength;
+    newMemberIndex < reqireLength;
     newMemberIndex += 1
   ) {
     const lastMember = progression[newMemberIndex - 1];
