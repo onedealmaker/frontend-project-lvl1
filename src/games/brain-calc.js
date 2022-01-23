@@ -13,7 +13,7 @@ const calculate = (firstMember, operator, secondMember) => {
     case '*':
       return firstMember * secondMember;
     default:
-      return null;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
